@@ -190,7 +190,7 @@ u0_a271      11657   573 4302108  50600 ptrace_stop         0 t com.example.hell
 $ adb shell cat /proc/11657/status | grep -e "^TracerPid:" | sed "s/^TracerPid:\t//"
 TracerPid:      11839
 $ adb shell ps -A | grep 11839
-u0_a271      11839 11837   14024   4548 poll_schedule_timeout 0 S lldb-server
+root      11839 11837   14024   4548 poll_schedule_timeout 0 S lldb-server
 ```
 
 You can see how the status file of com.example.hellojni (PID=11657) contains a TracerPID of 11839, which we can identify as the lldb-server process.
