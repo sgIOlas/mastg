@@ -1,7 +1,7 @@
 ---
 platform: android
 title: JDWP Debugging Checks in App Code
-id: MASTG-DEMO-0040
+id: MASTG-DEMO-0x40
 code: [kotlin]
 test: MASTG-TEST-0046-1
 tools: [MASTG-TOOL-0110]

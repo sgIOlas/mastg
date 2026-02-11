@@ -9,7 +9,7 @@ import android.os.Debug
 class MastgTest (private val context: Context){
 
     fun mastgTest(): String {
-        val r = DemoResults("0040")
+        val r = DemoResults("0x40")
 
         try {
             val debuggable = isDebuggable(context)
