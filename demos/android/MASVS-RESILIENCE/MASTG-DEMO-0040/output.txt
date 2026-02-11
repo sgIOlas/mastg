@@ -1,0 +1,24 @@
+                  
+                  
+┌────────────────┐
+│ 1 Code Finding │
+└────────────────┘
+                                                                                
+    mastg/demos/android/MASVS-RESILIENCE/MASTG-DEMO-0040/MastgTest_reversed.java
+    ❯❱ mastg.rules.mastg-android-debugger-checks
+          [MASVS-RESILIENCE-4] debugger checks detected.
+                                                        
+           25┆ boolean debuggerConnected = Debug.isDebuggerConnected();
+
+                  
+                  
+┌────────────────┐
+│ 1 Code Finding │
+└────────────────┘
+                                                                                     
+    mastg/demos/android/MASVS-RESILIENCE/MASTG-DEMO-0040/AndroidManifest_reversed.xml
+    ❯❱ mastg.rules.mastg-android-debuggable-flag
+          [MASVS-RESILIENCE-4] debuggable detected as true.
+                                                           
+           22┆ android:debuggable="true"
+
