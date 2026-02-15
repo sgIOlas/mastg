@@ -273,7 +273,7 @@ $ lldb
 
 ### Android 14+ note for LLDB clients
 
-As discussed [here](https://community.hex-rays.com/t/android-server-is-bad-since-android-14/474), some users report crashes when debugging Android 14 processes with certain clients. A workaround is to disable the JIT loader plugin and pass SIGSEGV/SIGBUS to the app while keeping the debugger attached. You can do this in LLDB before attaching:
+As discussed [here](https://community.hex-rays.com/t/android-server-is-bad-since-android-14/474), some users report crashes when debugging Android 14+ processes with certain lldb clients. A workaround is to disable the JIT loader plugin and pass SIGSEGV/SIGBUS to the app while keeping the debugger attached. You can do this in LLDB before attaching:
 
 ```bash
 (lldb) settings set plugin.jit-loader.gdb.enable off
