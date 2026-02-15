@@ -52,5 +52,5 @@ The module hooks `system_server` and modifies `ApplicationInfo` and process star
 
 ## References
 
-- https://github.com/Olasergiolas/debugmepLS
-- https://github.com/libxposed/example
+- [debugmepLS](https://github.com/Olasergiolas/debugmepLS)
+- [LSPosed Module Example](https://github.com/libxposed/example)

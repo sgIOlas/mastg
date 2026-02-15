@@ -29,23 +29,16 @@ Use lldb to attach to a running process or launch the app under the debugger. Re
 
 Below are example steps to attach lldb to a running process inside a rooted Android device. Do note that `lldb-server` subcommands and flags may differ between NDK releases. Use the Android Studio/NDK docs to confirm the exact invocation for your version.:
 
-1. Spawn a root ADB shell using the following commands:
+1. Spawn a root ADB shell using commands `adb shell` and `su`.
+2. Run lldb with `lldb-server p --server --listen 0.0.0.0:1234`. This will start the lldb server, listening for connections from all addresses on port `1234`. Using any other accessible port is also correct.
+3. Use ADB to forward connections to the `1234` port by running `adb forward tcp:1234 tcp:1234`.
+4. From the host, connect to the lldb server by starting lldb and running the following commands inside, where `$TARGET_PID` is the pid of the process to debug:
 
 ```bash
-adb shell
-su
-```
-
-2. Run lldb with `lldb-server p --server --listen 0.0.0.0:1234`. This will start the lldb server, listening for connections from all addresses on port `1234`. Using any other accessible port is also correct.
-
-3. Use ADB to forward connections to the `1234` port by running `adb forward tcp:1234 tcp:1234`.
-
-4. From the host, connect to the lldb server by starting lldb and running the following commands inside, where `$TARGET_PID` is the pid of the process to debug:
-```
 (lldb) platform select remote-android
 (lldb) platform connect connect://localhost:1234
 (lldb) process attach -p $TARGET_PID
-``` 
+```
 
 ## Caveats and Limitations
 
@@ -54,5 +47,5 @@ su
 
 ## References
 
-- https://lldb.llvm.org/
-- https://developer.android.com/studio/debug
+- [lldb](https://lldb.llvm.org/)
+- [Android Debugging Docs](https://developer.android.com/studio/debug)
