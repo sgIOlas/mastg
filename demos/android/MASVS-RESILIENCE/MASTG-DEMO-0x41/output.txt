@@ -1,0 +1,184 @@
+                    
+                    
+┌──────────────────┐
+│ 35 Code Findings │
+└──────────────────┘
+                           
+    MastgTest_reversed.java
+    ❯❱ rules.mastg-android-native-debugger-checks
+          [MASVS-RESILIENCE-4] native anti-debugging check indicator detected.
+                                                                              
+           17┆ @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u000
+               2\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\b\u0007\u0018
+               \u0000 \u000f2\u00020\u0001:\u0001\u000fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢
+               \u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u0006\u001a\u00020\u0007J\t\u0010\b\u001a\u00
+               020\tH\u0082 J\t\u0010\n\u001a\u00020\tH\u0082 J\t\u0010\u000b\u001a\u00020\tH\u0082 J\b\u0
+               010\f\u001a\u00020\tH\u0002J\u0010\u0010\r\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u000
+               20\tH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\
+               u0010"}, d2 = {"Lorg/owasp/mastestapp/MastgTest;", "", "context",                          
+               "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "mastgTest", "",    
+               "getTracerPidNative", "", "getTracerPidInlineSyscallNative", "ptraceSelfDetectNative",     
+               "getTracerPidFromProcStatus", "errnoName", "errno", "Companion", "app_debug"}, k = 1, mv = 
+               {2, 0, 0}, xi = 48)                                                                        
+            ⋮┆----------------------------------------
+           17┆ @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u000
+               2\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\b\u0007\u0018
+               \u0000 \u000f2\u00020\u0001:\u0001\u000fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢
+               \u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u0006\u001a\u00020\u0007J\t\u0010\b\u001a\u00
+               020\tH\u0082 J\t\u0010\n\u001a\u00020\tH\u0082 J\t\u0010\u000b\u001a\u00020\tH\u0082 J\b\u0
+               010\f\u001a\u00020\tH\u0002J\u0010\u0010\r\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u000
+               20\tH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\
+               u0010"}, d2 = {"Lorg/owasp/mastestapp/MastgTest;", "", "context",                          
+               "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "mastgTest", "",    
+               "getTracerPidNative", "", "getTracerPidInlineSyscallNative", "ptraceSelfDetectNative",     
+               "getTracerPidFromProcStatus", "errnoName", "errno", "Companion", "app_debug"}, k = 1, mv = 
+               {2, 0, 0}, xi = 48)                                                                        
+            ⋮┆----------------------------------------
+           17┆ @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u000
+               2\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\b\u0007\u0018
+               \u0000 \u000f2\u00020\u0001:\u0001\u000fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢
+               \u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u0006\u001a\u00020\u0007J\t\u0010\b\u001a\u00
+               020\tH\u0082 J\t\u0010\n\u001a\u00020\tH\u0082 J\t\u0010\u000b\u001a\u00020\tH\u0082 J\b\u0
+               010\f\u001a\u00020\tH\u0002J\u0010\u0010\r\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u000
+               20\tH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\
+               u0010"}, d2 = {"Lorg/owasp/mastestapp/MastgTest;", "", "context",                          
+               "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "mastgTest", "",    
+               "getTracerPidNative", "", "getTracerPidInlineSyscallNative", "ptraceSelfDetectNative",     
+               "getTracerPidFromProcStatus", "errnoName", "errno", "Companion", "app_debug"}, k = 1, mv = 
+               {2, 0, 0}, xi = 48)                                                                        
+            ⋮┆----------------------------------------
+           25┆ private final native int getTracerPidInlineSyscallNative();
+            ⋮┆----------------------------------------
+           27┆ private final native int getTracerPidNative();
+            ⋮┆----------------------------------------
+           56┆ int tracerPidKotlin = getTracerPidFromProcStatus();
+            ⋮┆----------------------------------------
+           58┆ r.add(Status.FAIL, "Kotlin check: native debugger detected via TracerPid=" +
+               tracerPidKotlin + " in /proc/self/status.");                                
+            ⋮┆----------------------------------------
+           58┆ r.add(Status.FAIL, "Kotlin check: native debugger detected via TracerPid=" +
+               tracerPidKotlin + " in /proc/self/status.");                                
+            ⋮┆----------------------------------------
+           60┆ r.add(Status.PASS, "Kotlin check: no native debugger detected via TracerPid=" +
+               tracerPidKotlin + " in /proc/self/status.");                                   
+            ⋮┆----------------------------------------
+           60┆ r.add(Status.PASS, "Kotlin check: no native debugger detected via TracerPid=" +
+               tracerPidKotlin + " in /proc/self/status.");                                   
+            ⋮┆----------------------------------------
+           70┆ r.add(Status.ERROR, "Kotlin check failed: could not parse TracerPid in /proc/self/status: "
+               + e2.getMessage());                                                                        
+            ⋮┆----------------------------------------
+           70┆ r.add(Status.ERROR, "Kotlin check failed: could not parse TracerPid in /proc/self/status: "
+               + e2.getMessage());                                                                        
+            ⋮┆----------------------------------------
+           72┆ r.add(Status.ERROR, "Kotlin check failed: unexpected error while checking TracerPid: " +
+               e3.getMessage());                                                                       
+            ⋮┆----------------------------------------
+           79┆ int tracerPidNative = getTracerPidNative();
+            ⋮┆----------------------------------------
+           81┆ r.add(Status.ERROR, "Native check failed: could not read or parse TracerPid from
+               /proc/self/status.");                                                           
+            ⋮┆----------------------------------------
+           81┆ r.add(Status.ERROR, "Native check failed: could not read or parse TracerPid from
+               /proc/self/status.");                                                           
+            ⋮┆----------------------------------------
+           83┆ r.add(Status.FAIL, "Native check: native debugger detected via TracerPid=" +
+               tracerPidNative + " in /proc/self/status.");                                
+            ⋮┆----------------------------------------
+           83┆ r.add(Status.FAIL, "Native check: native debugger detected via TracerPid=" +
+               tracerPidNative + " in /proc/self/status.");                                
+            ⋮┆----------------------------------------
+           85┆ r.add(Status.PASS, "Native check: no native debugger detected via TracerPid=" +
+               tracerPidNative + " in /proc/self/status.");                                   
+            ⋮┆----------------------------------------
+           85┆ r.add(Status.PASS, "Native check: no native debugger detected via TracerPid=" +
+               tracerPidNative + " in /proc/self/status.");                                   
+            ⋮┆----------------------------------------
+           88┆ r.add(Status.ERROR, "Native check failed: unexpected error while checking TracerPid: " +
+               e4.getMessage());                                                                       
+            ⋮┆----------------------------------------
+           91┆ int tracerPidInline = getTracerPidInlineSyscallNative();
+            ⋮┆----------------------------------------
+           98┆ r.add(Status.ERROR, "Inline-syscall native check failed: could not read or parse
+               TracerPid.");                                                                   
+            ⋮┆----------------------------------------
+          100┆ r.add(Status.FAIL, "Inline-syscall native check: native debugger detected via TracerPid=" +
+               tracerPidInline + " in /proc/self/status.");                                               
+            ⋮┆----------------------------------------
+          100┆ r.add(Status.FAIL, "Inline-syscall native check: native debugger detected via TracerPid=" +
+               tracerPidInline + " in /proc/self/status.");                                               
+            ⋮┆----------------------------------------
+          102┆ r.add(Status.PASS, "Inline-syscall native check: no native debugger detected via
+               TracerPid=" + tracerPidInline + " in /proc/self/status.");                      
+            ⋮┆----------------------------------------
+          102┆ r.add(Status.PASS, "Inline-syscall native check: no native debugger detected via
+               TracerPid=" + tracerPidInline + " in /proc/self/status.");                      
+            ⋮┆----------------------------------------
+          105┆ r.add(Status.ERROR, "Inline-syscall native check failed: unexpected error while checking
+               TracerPid: " + e5.getMessage());                                                        
+            ⋮┆----------------------------------------
+          124┆ private final int getTracerPidFromProcStatus() {
+            ⋮┆----------------------------------------
+          126┆ String statusText = FilesKt.readText$default(new File("/proc/self/status"), null, 1, null);
+            ⋮┆----------------------------------------
+          133┆ if (StringsKt.startsWith$default(it2, "TracerPid:", false, 2, (Object) null)) {
+            ⋮┆----------------------------------------
+          143┆ throw new IllegalStateException("TracerPid line not found in /proc/self/status");
+            ⋮┆----------------------------------------
+          143┆ throw new IllegalStateException("TracerPid line not found in /proc/self/status");
+            ⋮┆----------------------------------------
+          147┆ throw new IllegalStateException("TracerPid value is empty in /proc/self/status");
+            ⋮┆----------------------------------------
+          147┆ throw new IllegalStateException("TracerPid value is empty in /proc/self/status");
+
+                   
+                   
+┌─────────────────┐
+│ 4 Code Findings │
+└─────────────────┘
+                       
+    tracerpid_check.cpp
+    ❯❱ rules.mastg-android-native-debugger-checks
+          [MASVS-RESILIENCE-4] native anti-debugging check indicator detected.
+                                                                              
+            7┆ Java_org_owasp_mastestapp_MastgTest_getTracerPidNative(JNIEnv* env, jobject thiz) {
+            ⋮┆----------------------------------------
+           11┆ FILE* file = std::fopen("/proc/self/status", "r");
+            ⋮┆----------------------------------------
+           18┆ if (std::strncmp(line, "TracerPid:", 10) == 0) {
+            ⋮┆----------------------------------------
+           20┆ const int parsed = std::sscanf(line, "TracerPid:\t%d", &tracer_pid);
+
+                   
+                   
+┌─────────────────┐
+│ 3 Code Findings │
+└─────────────────┘
+                             
+    tracerpid_ptrace_self.cpp
+    ❯❱ rules.mastg-android-native-debugger-checks
+          [MASVS-RESILIENCE-4] native anti-debugging check indicator detected.
+                                                                              
+           41┆ if (ptrace(PTRACE_ATTACH, parent_pid, nullptr, nullptr) == 0) {
+            ⋮┆----------------------------------------
+           41┆ if (ptrace(PTRACE_ATTACH, parent_pid, nullptr, nullptr) == 0) {
+            ⋮┆----------------------------------------
+           46┆ if (ptrace(PTRACE_DETACH, parent_pid, nullptr, nullptr) != 0) {
+
+                   
+                   
+┌─────────────────┐
+│ 3 Code Findings │
+└─────────────────┘
+                                
+    tracerpid_inline_syscall.cpp
+    ❯❱ rules.mastg-android-native-debugger-checks
+          [MASVS-RESILIENCE-4] native anti-debugging check indicator detected.
+                                                                              
+           79┆ const char* key = "TracerPid:";
+            ⋮┆----------------------------------------
+          105┆ reinterpret_cast<long>("/proc/self/status"),
+            ⋮┆----------------------------------------
+          131┆ Java_org_owasp_mastestapp_MastgTest_getTracerPidInlineSyscallNative(JNIEnv* env, jobject
+               thiz) {                                                                                 
+

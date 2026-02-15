@@ -1,0 +1,13 @@
+rules:
+  - id: mastg-android-native-debugger-checks
+    severity: WARNING
+    languages: [cpp, java]
+    metadata:
+      summary: Detects native anti-debugging checks based on TracerPid and ptrace-related indicators.
+    message: "[MASVS-RESILIENCE-4] native anti-debugging check indicator detected."
+    patterns:
+      - pattern-either:
+          - pattern: ptrace(...)
+          - pattern: PTRACE_ATTACH
+          - pattern-regex: TracerPid
+          - pattern-regex: /proc/self/status
