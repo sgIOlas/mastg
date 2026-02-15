@@ -35,3 +35,5 @@ The output should contain evidence of JDWP checks, such as code locations or log
 ## Evaluation
 
 The test case fails if the app does not implement JDWP debugging checks or if those checks are not applied correctly at runtime.
+
+The test passes if JDWP debugging checks are observed. However, results from this test should be interpreted as evidence of the presence of the aforementioned check, not as an assessment of its robustness or effectiveness.
