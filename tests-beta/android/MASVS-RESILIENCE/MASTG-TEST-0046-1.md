@@ -4,7 +4,7 @@ title: Runtime Use of JDWP Debugging Checks
 id: MASTG-TEST-0046-1
 type: [static, dynamic]
 weakness: MASWE-0101
-best-practices: [MASTG-BEST-0007]
+best-practices: [MASTG-BEST-0007, MASTG-BEST-0029]
 profiles: [R]
 knowledge: [MASTG-KNOW-0007, MASTG-KNOW-0028]
 ---
