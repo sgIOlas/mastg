@@ -273,13 +273,3 @@ $ lldb
 (lldb) platform connect connect://localhost:1234
 (lldb) process attach -p 12690
 ```
-
-### Android 14+ note for LLDB clients
-
-As discussed [here](https://community.hex-rays.com/t/android-server-is-bad-since-android-14/474), some users report crashes when debugging Android 14+ processes with certain lldb clients. A workaround is to disable the JIT loader plugin and pass SIGSEGV/SIGBUS to the app while keeping the debugger attached. You can do this in LLDB before attaching:
-
-```bash
-(lldb) settings set plugin.jit-loader.gdb.enable off
-(lldb) process handle SIGSEGV -s false -p true -n false
-(lldb) process handle SIGBUS -s false -p true -n false
-```
