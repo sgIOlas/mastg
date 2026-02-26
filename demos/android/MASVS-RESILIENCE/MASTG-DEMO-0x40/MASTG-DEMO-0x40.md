@@ -5,6 +5,7 @@ id: MASTG-DEMO-0x40
 code: [kotlin]
 test: MASTG-TEST-0046-1
 tools: [MASTG-TOOL-0110]
+kind: pass
 ---
 
 ## Sample
