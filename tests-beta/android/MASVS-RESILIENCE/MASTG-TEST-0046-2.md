@@ -4,7 +4,7 @@ title: Runtime Use of Native Debugging Checks
 id: MASTG-TEST-0046-2
 type: [static, dynamic]
 weakness: MASWE-0101
-best-practices: [MASTG-BEST-0007, MASTG-BEST-0029]
+best-practices: [MASTG-BEST-0007, MASTG-BEST-0029, MASTG-BEST-0x32]
 profiles: [R]
 knowledge: [MASTG-KNOW-0028]
 ---
