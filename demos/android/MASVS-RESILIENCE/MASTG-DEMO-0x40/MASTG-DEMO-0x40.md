@@ -30,6 +30,4 @@ The output lists code locations where runtime debugger checks are performed.
 
 ## Evaluation
 
-Review each reported location:
-
-- `Debug.isDebuggerConnected()` is reported in `MastgTest_reversed.java` (line 23), which indicates a runtime JDWP debugger check.
+The test passes because the app uses `Debug.isDebuggerConnected()` API to detect an attached JDWP debugger at line 23.
