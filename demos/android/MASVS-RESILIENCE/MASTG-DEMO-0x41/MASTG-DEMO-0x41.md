@@ -31,8 +31,4 @@ The output should contain detections for native anti-debugging indicators such a
 
 ## Evaluation
 
-Review each reported location:
-
-- Detections in `MastgTest_reversed.java` show app logic that checks debugging state.
-- Detections in `tracerpid_check.cpp` and `tracerpid_inline_syscall.cpp` show native checks for `TracerPid`.
-- Detections in `tracerpid_ptrace_self.cpp` show native `ptrace`-based anti-debugging logic.
+The test passes because the app implements native debugger detection checks, for example `getTracerPidFromProcStatus()` at `MastgTest_reversed.java` line 56, native `TracerPid` JNI checks invoked at lines 79 and 91, and `/proc/self/status` parsing at lines 126 and 133. The output also reports native `ptrace` anti-debugging logic in `tracerpid_ptrace_self.cpp` line 41 (`PTRACE_ATTACH`).
