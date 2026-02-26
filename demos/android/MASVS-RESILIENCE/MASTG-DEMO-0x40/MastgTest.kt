@@ -1,9 +1,8 @@
 package org.owasp.mastestapp
 
-// SUMMARY: This demo checks debuggable status and active JDWP debugging signals.
+// SUMMARY: This demo detects active JDWP debugger attachment at runtime.
 
 import android.content.Context
-import android.content.pm.ApplicationInfo
 import android.os.Debug
 
 class MastgTest (private val context: Context){
@@ -12,23 +11,14 @@ class MastgTest (private val context: Context){
         val r = DemoResults("0x40")
 
         try {
-            val debuggable = isDebuggable(context)
             val debuggerConnected = Debug.isDebuggerConnected()
 
-            // FAIL: [MASTG-TEST-0046-1] android:debuggable enabled in the app flags.
-            // PASS: [MASTG-TEST-0046-1] android:debuggable disabled in the app flags.
-            if (debuggable) {
-                r.add(Status.FAIL, "android:debuggable appears enabled via ApplicationInfo.FLAG_DEBUGGABLE.")
-            } else {
-                r.add(Status.PASS, "android:debuggable appears disabled (FLAG_DEBUGGABLE not set).")
-            }
-
-            // FAIL: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports a debugger.
-            // PASS: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports no debugger.
+            // FAIL: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports an attached JDWP debugger.
+            // PASS: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports no attached JDWP debugger.
             if (debuggerConnected) {
-                r.add(Status.FAIL, "Debug.isDebuggerConnected reports an attached debugger.")
+                r.add(Status.FAIL, "Debug.isDebuggerConnected reports an attached JDWP debugger.")
             } else {
-                r.add(Status.PASS, "Debug.isDebuggerConnected reports no debugger attached.")
+                r.add(Status.PASS, "Debug.isDebuggerConnected reports no attached JDWP debugger.")
             }
 
         } catch (e: Exception) {
@@ -36,11 +26,6 @@ class MastgTest (private val context: Context){
         }
 
         return r.toJson()
-    }
-
-    private fun isDebuggable(context: Context): Boolean {
-        val appInfo = context.applicationContext.applicationInfo
-        return (appInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE) != 0
     }
 
 }
