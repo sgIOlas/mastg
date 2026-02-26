@@ -10,22 +10,21 @@ kind: pass
 
 ## Sample
 
-This sample checks whether the app is debuggable via `ApplicationInfo.FLAG_DEBUGGABLE` and whether a debugger is attached via `Debug.isDebuggerConnected()`.
+This sample detects an attached JDWP debugger at runtime by calling `Debug.isDebuggerConnected()`.
 
 {{ MastgTest.kt # MastgTest_reversed.java }}
 
 ## Steps
 
-Run the static analysis rule and manifest check against the decompiled code and manifest.
+Run the static analysis rule against the decompiled code.
 
 {{ ../../../../rules/mastg-android-debugger-checks.yml }}
-{{ ../../../../rules/mastg-android-debuggable-flag.yml }}
 
 {{ run.sh }}
 
 ## Observation
 
-The output lists code locations where debugger checks are performed and whether the manifest is marked as debuggable.
+The output lists code locations where runtime debugger checks are performed.
 
 {{ output.txt }}
 
@@ -33,5 +32,4 @@ The output lists code locations where debugger checks are performed and whether 
 
 Review each reported location:
 
-- `Debug.isDebuggerConnected()` is reported in `MastgTest_reversed.java` (line 25), which indicates a runtime debugger check.
-- The `android:debuggable="true"` manifest flag is reported in `AndroidManifest_reversed.xml` (line 22), which indicates the app build allows debugging.
+- `Debug.isDebuggerConnected()` is reported in `MastgTest_reversed.java` (line 23), which indicates a runtime JDWP debugger check.
