@@ -13,11 +13,11 @@ class MastgTest (private val context: Context){
         try {
             val debuggerConnected = Debug.isDebuggerConnected()
 
-            // FAIL: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports an attached JDWP debugger.
-            // PASS: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports no attached JDWP debugger.
             if (debuggerConnected) {
+                // FAIL: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports an attached JDWP debugger.
                 r.add(Status.FAIL, "Debug.isDebuggerConnected reports an attached JDWP debugger.")
             } else {
+                // PASS: [MASTG-TEST-0046-1] Debug.isDebuggerConnected reports no attached JDWP debugger.
                 r.add(Status.PASS, "Debug.isDebuggerConnected reports no attached JDWP debugger.")
             }
 
