@@ -13,7 +13,7 @@ knowledge: [MASTG-KNOW-0007, MASTG-KNOW-0028]
 
 This test verifies whether the app detects a JDWP debugger attached to it.
 
-Note that an attacker can attach a debugger after the application has completed its initial debugger check. Therefore, the application should continuously verify its debugging state rather than performing a one-time check.
+Note that an attacker can attach a debugger after the application has completed its initial debugger check, so one-time checks can be bypassed by attaching later. For guidance on continuous debugging checks, see @MASTG-BEST-0x32.
 
 For further information about anti-debugging, please refer to @MASTG-KNOW-0028 and [MASTG resiliency](../../../Document/0x05j-Testing-Resiliency-Against-Reverse-Engineering.md).
 
