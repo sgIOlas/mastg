@@ -25,15 +25,21 @@ In the following section, we'll show how to solve the @MASTG-APP-0003 with @MAST
 The @MASTG-TOOL-0004 command line tool was introduced in the "[Android Basic Security Testing](../../Document/0x05b-Android-Security-Testing.md "Android Basic Security Testing")" chapter. You can use its `adb jdwp` command to list the process IDs of all debuggable processes running on the connected device (i.e., processes hosting a JDWP transport). With the `adb forward` command, you can open a listening socket on your host computer and forward this socket's incoming TCP connections to the JDWP transport of a chosen process.
 
 ```bash
-$ adb jdwp
+adb jdwp
+```
+
+```text
 12167
-$ adb forward tcp:7777 jdwp:12167
+```
+
+```bash
+adb forward tcp:7777 jdwp:12167
 ```
 
 You're now ready to attach @MASTG-TOOL-0019. Attaching the debugger, however, causes the app to resume, which you don't want. You want to keep it suspended so that you can explore first. To prevent the process from resuming, pipe the `suspend` command into the debugger:
 
 ```bash
-$ { echo "suspend"; cat; } | jdb -attach localhost:7777
+{ echo "suspend"; cat; } | jdb -attach localhost:7777
 Initializing jdb ...
 > All threads suspended.
 >
@@ -211,14 +217,22 @@ You'll now set up your JNI demo app, HelloWorld-JNI.apk, for debugging. It's the
 adb install HelloWorld-JNI.apk
 ```
 
-If you followed the instructions at the beginning of this chapter, you should already have the Android NDK (@MASTG-TOOL-0005). It includes `lldb-server` for various architectures. Copy `lldb-server` to your device and attach it to the target process. Start HelloWorldJNI on the device, then connect to the device and determine the PID of the HelloWorldJNI process (sg.vantagepoint.helloworldjni). Then switch to the root user and start `lldb-server`:
+If you followed the instructions at the beginning of this chapter, you should already have the Android NDK (@MASTG-TOOL-0005). It includes `lldb-server` for various architectures. Copy `lldb-server` to your device and attach it to the target process. Start HelloWorldJNI on the device, then connect to the device and determine the PID of the HelloWorldJNI process (sg.vantagepoint.helloworldjni):
 
 ```bash
-$ adb shell
-$ ps | grep helloworld
+adb shell
+ps | grep helloworld
+```
+
+```text
 u0_a164   12690 201   1533400 51692 ffffffff 00000000 S sg.vantagepoint.helloworldjni
-$ su
-# /data/local/tmp/lldb-server p --server --listen 0.0.0.0:1234
+```
+
+Then switch to the root user and start `lldb-server`:
+
+```bash
+su
+/data/local/tmp/lldb-server p --server --listen 0.0.0.0:1234
 ```
 
 With the device connected via USB, forward the port to the host:
@@ -230,7 +244,10 @@ adb forward tcp:1234 tcp:1234
 From the host, connect with lldb:
 
 ```bash
-$ lldb
+lldb
+```
+
+```text
 (lldb) platform select remote-android
 (lldb) platform connect connect://localhost:1234
 (lldb) process attach -p 12690
@@ -243,17 +260,24 @@ Our objective is to set a breakpoint at the first instruction of the native func
 First, resume execution of the Java VM by attaching @MASTG-TOOL-0019. You don't want the process to resume immediately, though, so pipe the `suspend` command into the debugger:
 
 ```bash
-$ adb jdwp
+adb jdwp
+adb forward tcp:7777 jdwp:14342
+{ echo "suspend"; cat; } | jdb -attach localhost:7777
+```
+
+```text
 14342
-$ adb forward tcp:7777 jdwp:14342
-$ { echo "suspend"; cat; } | jdb -attach localhost:7777
 ```
 
 Next, suspend the process where the Java runtime loads `libnative-lib.so`. In the debugger, set a breakpoint at the `java.lang.System.loadLibrary` method and resume the process. After the breakpoint has been reached, execute the `step up` command, which will resume the process until `loadLibrary` returns. At this point, `libnative-lib.so` has been loaded.
 
-```bash
+```text
 > stop in java.lang.System.loadLibrary
 > resume
+> step up
+```
+
+```text
 All threads resumed.
 Breakpoint hit: "thread=main", java.lang.System.loadLibrary(), line=988 bci=0
 > step up
@@ -267,8 +291,11 @@ main[1]
 Execute `lldb-server` to attach to the suspended app. This will cause the app to be suspended by both the Java VM and the Linux kernel (creating a state of "double-suspension").
 
 ```bash
-$ adb forward tcp:1234 tcp:1234
-$ lldb
+adb forward tcp:1234 tcp:1234
+lldb
+```
+
+```text
 (lldb) platform select remote-android
 (lldb) platform connect connect://localhost:1234
 (lldb) process attach -p 12690
