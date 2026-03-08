@@ -2,7 +2,7 @@
 title: debugmepLS
 platform: android
 source: https://github.com/Olasergiolas/debugmepLS
-host: [android]
+hosts: [android]
 ---
 
 ## Overview

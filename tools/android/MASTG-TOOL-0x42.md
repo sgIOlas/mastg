@@ -2,7 +2,7 @@
 title: lldb
 platform: android
 source: https://lldb.llvm.org/
-host: [windows, linux, macOS]
+hosts: [windows, linux, macOS]
 ---
 
 ## Overview
