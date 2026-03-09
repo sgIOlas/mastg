@@ -27,7 +27,7 @@ Use lldb to attach to a running process or launch the app under the debugger. Re
 
 ### Debugging Example: Non-Debuggable App
 
-Below are example steps to attach lldb to a running, non-debuggable app. Since we are targeting an application built without `android:debuggable="true"`, we will need root access to successfully attach a debugger to the its process:
+Below are example steps to attach lldb to a running, non-debuggable app. Since we are targeting an application built without `android:debuggable="true"`, we will need root access to successfully attach a debugger to its process:
 
 1. Spawn a root ADB shell using commands `adb shell` and `su`.
 2. Run lldb with `lldb-server p --server --listen 0.0.0.0:1234`. This will start the lldb server, listening for connections from all addresses on port `1234`. Using any other accessible port is also correct.
