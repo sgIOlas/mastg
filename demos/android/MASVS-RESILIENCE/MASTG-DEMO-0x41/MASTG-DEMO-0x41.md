@@ -25,7 +25,7 @@ Run the native anti-debugging semgrep rule against the decompiled Java file and 
 
 ## Observation
 
-The output should contain detections for native anti-debugging indicators such as `TracerPid`, `/proc/self/status`, `ptrace(...)`, and `PTRACE_ATTACH`.
+The output should contain detections for native anti-debugging indicators such as testing for `TracerPid` in `/proc/self/status`, and testing for usage of `ptrace(PTRACE_ATTACH)`.
 
 {{ output.txt }}
 
