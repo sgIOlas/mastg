@@ -22,19 +22,8 @@ Java_org_owasp_mastestapp_MastgTest_ptraceSelfDetectNative(JNIEnv *env, jobject 
         const pid_t parent_pid = getppid();
 
         errno = 0;
-        if (ptrace(PTRACE_ATTACH, parent_pid, nullptr, nullptr) == 0)
+        if (ptrace(PTRACE_SEIZE, parent_pid, nullptr, nullptr) == 0)
         {
-            int wait_status = 0;
-            if (waitpid(parent_pid, &wait_status, 0) < 0)
-            {
-                _exit(2);
-            }
-
-            if (ptrace(PTRACE_DETACH, parent_pid, nullptr, nullptr) != 0)
-            {
-                _exit(2);
-            }
-
             _exit(0);
         }
 
