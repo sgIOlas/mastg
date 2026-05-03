@@ -107,13 +107,13 @@ public final class MastgTest {
         try {
             int ptraceSelf = ptraceSelfDetectNative();
             if (ptraceSelf > 0) {
-                r.add(Status.FAIL, "Native ptrace self-check: debugger likely detected (child could not PTRACE_ATTACH parent: EPERM).");
+                r.add(Status.FAIL, "Native ptrace self-check: debugger likely detected (child could not PTRACE_SEIZE parent: EPERM).");
             } else if (ptraceSelf == 0) {
-                r.add(Status.PASS, "Native ptrace self-check: no ptrace-based debugger detected (child attached and detached parent).");
+                r.add(Status.PASS, "Native ptrace self-check: no ptrace-based debugger detected (child seized parent).");
             } else {
                 int errno = -ptraceSelf;
                 String errnoName = errnoName(errno);
-                r.add(Status.ERROR, "Native ptrace self-check failed: ptrace attach/detach flow returned errno=" + errno + " (" + errnoName + ").");
+                r.add(Status.ERROR, "Native ptrace self-check failed: ptrace seize flow returned errno=" + errno + " (" + errnoName + ").");
             }
         } catch (Exception e6) {
             r.add(Status.ERROR, "Native ptrace self-check failed: unexpected error: " + e6.getMessage());

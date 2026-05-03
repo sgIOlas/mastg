@@ -106,20 +106,20 @@ class MastgTest (private val context: Context){
                 // FAIL: [MASTG-TEST-0046-2] Native ptrace self-check indicates a ptrace-based debugger is attached.
                 r.add(
                     Status.FAIL,
-                    "Native ptrace self-check: debugger likely detected (child could not PTRACE_ATTACH parent: EPERM)."
+                    "Native ptrace self-check: debugger likely detected (child could not PTRACE_SEIZE parent: EPERM)."
                 )
             } else if (ptraceSelf == 0) {
                 // PASS: [MASTG-TEST-0046-2] Native ptrace self-check did not detect a ptrace-based debugger.
                 r.add(
                     Status.PASS,
-                    "Native ptrace self-check: no ptrace-based debugger detected (child attached and detached parent)."
+                    "Native ptrace self-check: no ptrace-based debugger detected (child seized parent)."
                 )
             } else {
                 val errno = -ptraceSelf
                 val errnoName = errnoName(errno)
                 r.add(
                     Status.ERROR,
-                    "Native ptrace self-check failed: ptrace attach/detach flow returned errno=$errno ($errnoName)."
+                    "Native ptrace self-check failed: ptrace seize flow returned errno=$errno ($errnoName)."
                 )
             }
         } catch (e: Exception) {
