@@ -19,9 +19,7 @@ For further information about anti-debugging, please refer to @MASTG-KNOW-0028 a
 
 ## Steps
 
-1. Use @MASTG-TECH-0014 to search for calls to JDWP-related Android APIs as shown in @MASTG-KNOW-0028, such as:
-    1. Calls to [`Debug.isDebuggerConnected()`](https://developer.android.com/reference/android/os/Debug#isDebuggerConnected()).
-    2. Calls that calculate CPU time deltas, for example, [`Debug.threadCpuTimeNanos()`](https://developer.android.com/reference/android/os/Debug#threadCpuTimeNanos()).
+1. Use @MASTG-TECH-0014 to search for calls to JDWP-related Android APIs as shown in @MASTG-KNOW-0028, such as [`Debug.isDebuggerConnected()`](https://developer.android.com/reference/android/os/Debug#isDebuggerConnected()).
 2. If needed, use @MASTG-TECH-0031 to enable JDWP attach at runtime.
 3. Spawn the app and attach a JDWP debugger to its process using @MASTG-TECH-0031.
 4. Navigate to the screen you want to analyze.
