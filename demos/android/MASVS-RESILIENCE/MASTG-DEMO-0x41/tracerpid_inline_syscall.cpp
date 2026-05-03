@@ -97,8 +97,7 @@ int parse_tracer_pid(const char* data) {
 }
 
 int read_tracer_pid_with_inline_syscalls() {
-    char buffer[4096];
-    std::memset(buffer, 0, sizeof(buffer));
+    char buffer[4096] = {0};
 
     const long fd = raw_syscall3(kNrOpenat,
                                  static_cast<long>(AT_FDCWD),
